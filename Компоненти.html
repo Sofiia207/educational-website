@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компоненти</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <div class = "header2" id="top">
+        <div class="header-content">
+            <img class='logo' img src="logo-01.png" />
+            <div class="nav">
+                <ul>
+                    <li><a href ="Головна.html#">Головна</a></li>
+                    <li><a href ="Основи.html#">Основи</a></li>
+                    <li><a href ="Компоненти.html#">Компоненти</a></li>
+                    <li><a href ="Сітка.html#">Сітка</a></li>
+                    <li><a href ="Адаптивність.html#">Адаптивність</a></li>
+                    <li><a href ="Про нас.html#">Про нас</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h1>КОМПОНЕНТИ</h1>
+<div class="rule">
+    <h2>Кнопки</h2> 
+    <p>Використовуйте стилі кнопок Bootstrap, що налаштовуються, для дій у формах, діалогових вікнах і т.д. За допомогою кількох розмірів, станів і т.д.</p>
+    <h3>Базовий клас:</h3>
+    <p>Bootstrap має базовий клас <span class="code-style">.btn</span class="code-style">, який встановлює основні стилі, такі як відступи та вирівнювання вмісту. За замовчуванням елементи керування <span class="code-style">.btn</span class="code-style"> мають прозору рамку та колір фону і не мають жодних явних стилів фокусу та наведення.</p>
+
+        <pre><code class="language-html">
+            &lt;button type="button" class="btn"&gt;Базовий клас&lt;/button&gt;
+        </code></pre>
+
+<p>Клас <span class="code-style">.btn</span class="code-style"> призначений для використання в поєднанні з варіантами кнопок або як основа для ваших власних стилів.</p>
+<h3>Варіанти</h3>
+<p>Bootstrap включає кілька варіантів кнопок, кожен з яких служить своїй семантичній меті, з додаванням декількох доповнень для більшого контролю.</p>
+
+<pre><code class="language-html">
+    &lt;button type="button" class="btn btn-primary"&gt;Primary&lt;/button&gt;
+    &lt;button type="button" class="btn btn-secondary"&gt;Secondary&lt;/button&gt;
+    &lt;button type="button" class="btn btn-success"&gt;Success&lt;/button&gt;
+    &lt;button type="button" class="btn btn-danger"&gt;Danger&lt;/button&gt;
+    &lt;button type="button" class="btn btn-warning"&gt;Warning&lt;/button&gt;
+    &lt;button type="button" class="btn btn-info"&gt;Info&lt;/button&gt;
+    &lt;button type="button" class="btn btn-light"&gt;Light&lt;/button&gt;
+    &lt;button type="button" class="btn btn-dark"&gt;Dark&lt;/button&gt;
+
+    &lt;button type="button" class="btn btn-link"&gt;Link&lt;/button&gt;
+</code></pre>
+<h3>Вимкнення перенесення тексту</h3>
+<p>Якщо Ви не бажаєте, щоб текст кнопки переносився, Ви можете додати до кнопки клас <span class="code-style">.text-nowrap</span class="code-style">. У Sass можна встановити <span class="code-style">$btn-white-space: nowrap</span class="code-style">, щоб вимкнути перенесення тексту для кожної кнопки.
+</p>
+<h3>Теги кнопок</h3>
+<p>Класи <span class="code-style">.btn</span class="code-style"> призначені для використання з елементом  <span class="code-style">&lt;button&gt;</span class="code-style">. Однак, Ви також можете використовувати ці класи для елементів  <span class="code-style">&lt;a&gt;</span class="code-style"> або  <span class="code-style">&lt;input&gt;</span class="code-style"> (хоча деякі браузери можуть застосовувати дещо інший рендеринг).<br>
+
+    При використанні класів кнопок в елементах <a>, які використовуються для запуску функціональності на сторінці (наприклад, згортання вмісту), замість посилатися на нові сторінки або розділи на поточній сторінці, цим посиланням слід присвоїти кнопку <span class="code-style">role="button"</span class="code-style">, щоб належним чином донести свою мету до допоміжних технологій, таких як програми читання з екрану.</p>
+        <pre><code class="language-html">
+            &lt;a class="btn btn-primary" href="#" role="button"&gt;Послання&lt;/a&gt;
+            &lt;button class="btn btn-primary" type="submit"&gt;Кнопка&lt;/button&gt;
+            &lt;input class="btn btn-primary" type="button" value="Поле введення"&gt;
+            &lt;input class="btn btn-primary" type="submit" value="Поле Відправити"&gt;
+            &lt;input class="btn btn-primary" type="reset" value="Поле Скинути"&gt;
+</code></pre>
+<h3>Контурні кнопки</h3>
+<p>Потрібна кнопка, але не багаті кольори фону, які вони приносять? Замініть класи модифікаторів за замовчуваннямм на класи <span class="code-style">.btn-outline-*</span class="code-style">, щоб видалити всі фонові зображення та кольори на будь-якій кнопці.</p>
+<pre><code class="language-html">
+&lt;button type="button" class="btn btn-outline-primary"&gt;Primary&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-secondary"&gt;Secondary&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-success"&gt;Success&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-danger"&gt;Danger&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-warning"&gt;Warning&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-info"&gt;Info&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-light">Light&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-dark"&gt;Dark&lt;/button&gt;
+</code></pre>
+<h3>Розміри</h3>
+<p>Бажаєте кнопки більшого чи меншого розміру? Додайте <span class="code-style">.btn-lg</span class="code-style"> або <span class="code-style">.btn-sm</span class="code-style"> додаткових розмірів.</p>
+<pre><code class="language-html">
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-lg&quot;&gt;Велика кнопка&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary btn-lg&quot;&gt;Велика кнопка&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-primary btn-sm&quot;&gt;Маленька кнопка&lt;/button&gt;
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-secondary btn-sm&quot;&gt;Маленька кнопка&lt;/button&gt;    
+</code></pre>
+<p>Ви можете змінити свій розмір за допомогою змінних CSS:</p>
+<pre><code class="language-html">
+    &lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot;
+    style=&quot;--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;&quot;&gt;
+Користувацька кнопка
+&lt;/button&gt;
+</code></pre>
+<h3>Відключений стан</h3>
+<p>Щоб кнопки були неактивними, додайте логічний атрибут <span class="code-style">disabled</span class="code-style"> до будь-якого елемента <span class="code-style">&lt;button&gt;</span class="code-style">. До відключених кнопок застосовуються <span class="code-style">pointer-events: none</span class="code-style">, що запобігає спрацьовуванню станів наведення та активного стану.</p>
+<pre><code class="language-html">
+&lt;button type=&quot;button&quot; class=&quot;btn btn-primary&quot; disabled&gt;Основна кнопка&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-secondary&quot; disabled&gt;Кнопка&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-primary&quot; disabled&gt;Основна кнопка&lt;/button&gt;
+&lt;button type=&quot;button&quot; class=&quot;btn btn-outline-secondary&quot; disabled&gt;Кнопка&lt;/button&gt;
+</code></pre>
+
+<ul><p>Відключені кнопки, що використовують елемент <span class="code-style">&lt;a&gt;</span class="code-style">, поводяться трохи інакше:</p>
+    <li><span class="code-style">&lt;a&gt;</span class="code-style"> не підтримують атрибут disabled, тому ви повинні додати клас .disabled, щоб він візуально виглядав вимкненим.</li>
+    <li>Включено деякі зручні для майбутнього стилі для відключення всіх <span class="code-style">pointer-events</span class="code-style"> на кнопках прив'язки.</li>
+    <li>Вимкнені кнопки <span class="code-style">&lt;a&gt;</span class="code-style"> повинні включати атрибут <span class="code-style">aria-disabled="true"</span class="code-style">, щоб вказати стан елемента для допоміжних технологій.</li>
+    <li>Вимкнені кнопки <span class="code-style">&lt;a&gt;</span class="code-style"> не повинні включати атрибут <span class="code-style">href</span class="code-style">.</li>
+</ul>
+
+<pre><code class="language-html">
+    &lt;a class=&quot;btn btn-primary disabled&quot; role=&quot;button&quot; aria-disabled=&quot;true&quot;&gt;Первинне посилання&lt;/a&gt;
+    &lt;a class=&quot;btn btn-secondary disabled&quot; role=&quot;button&quot; aria-disabled=&quot;true&quot;&gt;Посилання&lt;/a&gt;
+  </code></pre>
+</div>
+
+
+<div class="rule">
+    <h2>Картки</h2>
+<h3>Огляд</h3>
+<p>Карта - це гнучкий, розширюємий контейнер із вмістом. Він включає варіанти верхніх і нижніх колонтитулів, широкий вибір контенту, контекстні кольори фону і потужні параметри відображення. Якщо ви знайомі з Bootstrap 3, картки замінюють старі панелі, лунки та ескізи. Функціональність, аналогічна цим компонентам, доступна як класів модифікаторів для карток.</p>
+<h3>Приклад</h3>
+<p>Картки створюються з мінімальною кількістю розмітки та стилів, але все ж таки забезпечують тонну контролю та налаштування. Створені за допомогою flexbox, вони легко вирівнюються та добре поєднуються з іншими компонентами Bootstrap. За замовчуванням вони не мають <span class="code-style">margin</span>, тому використовуйте утиліти відстані за необхідності.<br>
+
+    Нижче наведено приклад базової картки зі змішаним змістом та фіксованою шириною. У карток немає фіксованої ширини для початку, тому вони природно заповнюють всю ширину батьківського елемента. Це легко налаштувати за допомогою різних параметрів розміру.</p>
+
+    <pre><code class="language-html">
+        &lt;div class=&quot;card&quot; style=&quot;width: 18rem;&quot;&gt;
+        &lt;img src=&quot;...&quot; class=&quot;card-img-top&quot; alt=&quot;...&quot;&gt;
+        &lt;div class=&quot;card-body&quot;&gt;
+          &lt;h5 class=&quot;card-title&quot;&gt;Заголовок картки&lt;/h5&gt;
+          &lt;p class=&quot;card-text&quot;&gt;Невеликий приклад тексту, який має ґрунтуватися на назві картки та складати основну частину вмісту картки.&lt;/p&gt;
+          &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Перейти куди-небудь&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      
+    </code></pre>
+<h3>Типи вмісту</h3>
+<p>Картки підтримують широкий спектр вмісту, включаючи зображення, текст, групи списків, посилання та багато іншого. Нижче наведено приклади того, що підтримується.</p>
+<h3>Тіло</h3>
+<p>Будівельним блоком картки є <span class="code-style">.card-body</span class="code-style">. Використовуйте його, коли Вам потрібен розділ на картці з м'якою підкладкою.</p>
+<pre><code class="language-html">
+&lt;div class=&quot;card&quot;&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    Це деякий текст в тілі картки.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Заголовки, текст та посилання</h3>
+<p>Заголовки карток використовуються шляхом додавання <span class="code-style">.card-title</span class="code-style"> до тега <span class="code-style">&lt;h*&gt;</span class="code-style">. Так само посилання додаються і розміщуються поруч один з одним шляхом додавання <span class="code-style">.card-link</span class="code-style"> до тега <span class="code-style">&lt;a&gt;</span class="code-style">.<br>
+
+    Підзаголовок використовується шляхом додавання <span class="code-style">.card-subtitle</span class="code-style"> до тега <span class="code-style">&lt;h*&gt;</span class="code-style">. Якщо елементи .card-title та <span class="code-style">.card-subtitle</span class="code-style"> розміщені в елементі <span class="code-style">.card-body</span class="code-style">, заголовок картки та підзаголовок будуть вирівняні.</p>
+    <pre><code class="language-html">
+        &lt;div class=&quot;card&quot; style=&quot;width: 18rem;&quot;&gt;
+        &lt;div class=&quot;card-body&quot;&gt;
+          &lt;h5 class=&quot;card-title&quot;&gt;Заголовок картки&lt;/h5&gt;
+          &lt;h6 class=&quot;card-subtitle mb-2 text-body-secondary&quot;&gt;Підзаголовок картки&lt;/h6&gt;
+          &lt;p class=&quot;card-text&quot;&gt;Невеликий приклад тексту, який повинен ґрунтуватися на назві карти та складати основну частину вмісту картки.&lt;/p&gt;
+          &lt;a href=&quot;#&quot; class=&quot;card-link&quot;&gt;Посилання картки&lt;/a&gt;
+          &lt;a href=&quot;#&quot; class=&quot;card-link&quot;&gt;Друге посилання&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+ </code></pre>
+<h3>Зображення</h3>
+<p><span class="code-style">.card-img-top</span class="code-style"> та <span class="code-style">.card-img-bottom</span class="code-style"> відповідно закруглюють верхній та нижній кути, щоб вони відповідали межам картки. За допомогою <span class="code-style">.card-text</span class="code-style"> на карту можна додати текст. Текст усередині <span class="code-style">.card-text</span class="code-style"> також можна стилізувати за допомогою стандартних HTML-тегів.</p>
+<pre><code class="language-html">
+    &lt;div class=&quot;card&quot; style=&quot;width: 18rem;&quot;&gt;
+    &lt;img src=&quot;...&quot; class=&quot;card-img-top&quot; alt=&quot;...&quot;&gt;
+    &lt;div class=&quot;card-body&quot;&gt;
+      &lt;p class=&quot;card-text&quot;&gt;Невеликий приклад тексту, який має ґрунтуватися на назві картки та складати основну частину вмісту картки.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;  
+</code></pre>
+<h3>Верхній та нижній колонтитули</h3>
+<p>Додайте до картки необов'язковий верхній та/або нижній колонтитули.</p>
+<pre><code class="language-html">
+    &lt;div class=&quot;card&quot;&gt;
+  &lt;div class=&quot;card-header&quot;&gt;
+    Руокмендовані
+  &lt;/div&gt;
+  &lt;div class=&quot;card-body&quot;&gt;
+    &lt;h5 class=&quot;card-title&quot;&gt;Особливе звернення з заголовком&lt;/h5&gt;
+    &lt;p class=&quot;card-text&quot;&gt;З допоміжним текстом нижче як природний перехід до додаткового контенту.&lt;/p&gt;
+    &lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;Перейти куди-небудь&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<div class="rule">
+    <h2>Карусель</h2> 
+<p>Компонент слайд-шоу для циклічного переходу за елементами – зображеннями або текстовими слайдами – наприклад, каруселі.</p>
+<p>Як це влаштовано</p>
+<ul>
+    <li>Карусель – це слайд-шоу для циклічного перегляду серії контенту, створеного за допомогою 3D-перетворень CSS та невеликої кількості JavaScript. Він працює з серією зображень, тексту або розмітки користувача. Він також включає підтримку попередніх/наступних елементів керування та індикаторів.</li>
+    <li>З міркувань продуктивності каруселі необхідно вручну ініціалізувати за допомогою методу конструктора каруселі. Без ініціалізації деякі прослуховувачі подій (зокрема, події, які потребують підтримки торкання/перегортання) не будуть зареєстровані доти, доки користувач явно не активує елемент керування або індикатор.<br>
+    Єдиним винятком є ​​автовідтворювані каруселі з атрибутом <span class="code-style">data-bs-ride="carousel"</span class="code-style">, оскільки вони автоматично ініціалізуються під час завантаження сторінки. Якщо ви використовуєте каруселі з автоматичним відтворенням з атрибутом даних, не ініціалізуйте ті самі каруселі явно за допомогою методу конструктора.</li>
+    <li>Вкладені каруселі не підтримуються. Ви також повинні знати, що каруселі в цілому часто можуть викликати проблеми зі зручністю використання та доступністю.</li>
+</ul>
+<h3>Основні приклади</h3>
+<p>Ось базовий приклад каруселі із трьома слайдами. Зверніть увагу на попередній/наступні елементи керування. Рекомендовано використовувати елементи <span class="code-style">&lt;button&gt;</span class="code-style">, але ви також можете використовувати елементи <span class="code-style">&lt;a&gt;</span class="code-style"> з <span class="code-style">role="button"</span class="code-style">.</p>
+<pre><code class="language-html">
+    &lt;div id=&quot;carouselExample&quot; class=&quot;carousel slide&quot;&gt;
+    &lt;div class=&quot;carousel-inner&quot;&gt;
+      &lt;div class=&quot;carousel-item active&quot;&gt;
+        &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;carousel-item&quot;&gt;
+        &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;carousel-item&quot;&gt;
+        &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class=&quot;carousel-control-prev&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExample&quot; data-bs-slide=&quot;prev&quot;&gt;
+      &lt;span class=&quot;carousel-control-prev-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;visually-hidden&quot;&gt;Попередній&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;button class=&quot;carousel-control-next&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExample&quot; data-bs-slide=&quot;next&quot;&gt;
+      &lt;span class=&quot;carousel-control-next-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+      &lt;span class=&quot;visually-hidden&quot;&gt;Наступний&lt;/span&gt;
+    &lt;/button&gt;
+  &lt;/div&gt;
+  
+</code></pre>
+<p>Каруселі не нормалізують автоматично розміри слайдів. Таким чином, вам може знадобитися використовувати додаткові утиліти або користувацькі стилі для відповідного розміру вмісту. Хоча каруселі підтримують елементи керування та індикатори «попередній/наступний», вони явно не потрібні. Додайте та налаштовуйте на свій розсуд<br>
+
+    Ви повинні додати клас <span class="code-style">.active</span class="code-style"> до одного зі слайдів, інакше карусель не буде видно. Також не забудьте встановити унікальний ID у файлі <span class="code-style">.carousel</span class="code-style"> для додаткових елементів керування, особливо якщо ви використовуєте кілька каруселів на одній сторінці. Елементи керування та індикатори повинні мати атрибут<span class="code-style"> data-bs-target</span class="code-style"> (або <span class="code-style">href</span class="code-style"> для посилань), який відповідає id елементу <span class="code-style">.carousel</span class="code-style">.</p>
+<h3>Індикатори</h3>
+<p>Ви можете додати індикатори в карусель разом із попередніми/наступними елементами керування. Індикатори дозволяють користувачам переходити безпосередньо до певного слайду.</p>
+<pre><code class="language-html">
+&lt;div id=&quot;carouselExampleIndicators&quot; class=&quot;carousel slide&quot;&gt;
+  &lt;div class=&quot;carousel-indicators&quot;&gt;
+    &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleIndicators&quot; data-bs-slide-to=&quot;0&quot; class=&quot;active&quot; aria-current=&quot;true&quot; aria-label=&quot;Slide 1&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleIndicators&quot; data-bs-slide-to=&quot;1&quot; aria-label=&quot;Slide 2&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleIndicators&quot; data-bs-slide-to=&quot;2&quot; aria-label=&quot;Slide 3&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;carousel-inner&quot;&gt;
+    &lt;div class=&quot;carousel-item active&quot;&gt;
+      &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;carousel-item&quot;&gt;
+      &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;carousel-item&quot;&gt;
+      &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;carousel-control-prev&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExampleIndicators&quot; data-bs-slide=&quot;prev&quot;&gt;
+    &lt;span class=&quot;carousel-control-prev-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;visually-hidden&quot;&gt;Попередній&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;carousel-control-next&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExampleIndicators&quot; data-bs-slide=&quot;next&quot;&gt;
+    &lt;span class=&quot;carousel-control-next-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;visually-hidden&quot;&gt;Наступний&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Підписи</h3>
+<p>Ви можете додавати підписи до своїх слайдів за допомогою елемента <span class="code-style">.carousel-caption</span class="code-style"> у будь-якому <span class="code-style">.carousel-item</span class="code-style">. Їх можна легко приховати на невеликих вікнах перегляду, як показано нижче, за допомогою необов'язкових утиліт відображення. Спочатку ми приховуємо їх за допомогою <span class="code-style">.d-none</span class="code-style">, а повертаємо на пристрої середнього розміру за допомогою <span class="code-style">.d-md-block</span class="code-style">.</p>
+<pre><code class="language-html">
+    &lt;div id=&quot;carouselExampleCaptions&quot; class=&quot;carousel slide&quot;&gt;
+  &lt;div class=&quot;carousel-indicators&quot;&gt;
+    &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleCaptions&quot; data-bs-slide-to=&quot;0&quot; class=&quot;active&quot; aria-current=&quot;true&quot; aria-label=&quot;Slide 1&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleCaptions&quot; data-bs-slide-to=&quot;1&quot; aria-label=&quot;Slide 2&quot;&gt;&lt;/button&gt;
+    &lt;button type=&quot;button&quot; data-bs-target=&quot;#carouselExampleCaptions&quot; data-bs-slide-to=&quot;2&quot; aria-label=&quot;Slide 3&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;carousel-inner&quot;&gt;
+    &lt;div class=&quot;carousel-item active&quot;&gt;
+      &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+      &lt;div class=&quot;carousel-caption d-none d-md-block&quot;&gt;
+        &lt;h5&gt;Мітка першого слайду&lt;/h5&gt;
+        &lt;p&gt;Деякий репрезентативний заповнювач для першого слайду.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;carousel-item&quot;&gt;
+      &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+      &lt;div class=&quot;carousel-caption d-none d-md-block&quot;&gt;
+        &lt;h5&gt;Мітка другого слайду&lt;/h5&gt;
+        &lt;p&gt;Деякий репрезентативний заповнювач для другого слайду&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;carousel-item&quot;&gt;
+      &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+      &lt;div class=&quot;carousel-caption d-none d-md-block&quot;&gt;
+        &lt;h5&gt;Мітка третього слайду&lt;/h5&gt;
+        &lt;p&gt;Деякий репрезентативний заповнювач для третього слайду&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;carousel-control-prev&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExampleCaptions&quot; data-bs-slide=&quot;prev&quot;&gt;
+    &lt;span class=&quot;carousel-control-prev-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;visually-hidden&quot;&gt;Попередній&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;carousel-control-next&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExampleCaptions&quot; data-bs-slide=&quot;next&quot;&gt;
+    &lt;span class=&quot;carousel-control-next-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;visually-hidden&quot;&gt;Наступний&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Плавний перехід</h3>
+<p>Додайте <span class="code-style">.carousel-fade</span class="code-style"> у свою карусель, щоб анімувати слайди з плавним переходом замість слайда. Залежно від вмісту вашої каруселі (наприклад, слайди, що містять тільки текст), ви можете додати <span class="code-style">.bg-body</span class="code-style"> або будь-який користувальницький CSS до <span class="code-style">.carousel-item</span class="code-style"> для правильного плавного переходу.</p>
+<pre><code class="language-html">
+    &lt;div id=&quot;carouselExampleFade&quot; class=&quot;carousel slide carousel-fade&quot;&gt;
+  &lt;div class=&quot;carousel-inner&quot;&gt;
+    &lt;div class=&quot;carousel-item active&quot;&gt;
+      &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;carousel-item&quot;&gt;
+      &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;carousel-item&quot;&gt;
+      &lt;img src=&quot;...&quot; class=&quot;d-block w-100&quot; alt=&quot;...&quot;&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class=&quot;carousel-control-prev&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExampleFade&quot; data-bs-slide=&quot;prev&quot;&gt;
+    &lt;span class=&quot;carousel-control-prev-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;visually-hidden&quot;&gt;Попередній&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class=&quot;carousel-control-next&quot; type=&quot;button&quot; data-bs-target=&quot;#carouselExampleFade&quot; data-bs-slide=&quot;next&quot;&gt;
+    &lt;span class=&quot;carousel-control-next-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+    &lt;span class=&quot;visually-hidden&quot;&gt;Наступний&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+</div>
+<div class="rule">
+<h2>Панель навігації</h2>
+<h3>Як це влаштовано</h3>
+<p>Ось що вам потрібно знати, перш ніж розпочати роботу з навігаційною панеллю:</p>
+<ul>
+    <li>Навігаційні панелі вимагають обгортки <span class="code-style">.navbar</span class="code-style"> з <span class="code-style">.navbar-expand{-sm|-md|-lg|-xl|-xxl}</span class="code-style"> для адаптивного згортання та класів колірної схеми.</li>
+    <li>Панелі навігації та їх вміст за промовчанням мінливі. Змініть контейнер, щоб обмежити їх ширину по горизонталі.</li>
+    <li>Використовуйте класи утиліт spacing та flex для керування інтервалами та вирівнюванням у панелях навігації.</li>
+    <li>Панелі навігації за промовчанням реагують, але ви можете легко змінити їх, щоб змінити це. Чуйна поведінка залежить від модуля, що підключається Collapse JavaScript.</li>
+    <li>Забезпечте доступність за допомогою елемента <span class="code-style">&lt;nav&gt;</span class="code-style"> або, при використанні більш загального елемента, такого як <span class="code-style">&lt;div&gt;</span class="code-style">, додайте role="navigation" на кожну навігаційну панель, щоб явно ідентифікувати її як область-орієнтир для користувачів допоміжних технологій.</li>
+    <li>Вкажіть поточний елемент за допомогою <span class="code-style">aria-current="page"</span class="code-style"> для поточної сторінки або <span class="code-style">aria-current="true"</span class="code-style"> для поточного елемента в наборі.</li>
+    <li>Нове у версії 5.2.0: Панелі навігації можуть бути оформлені за допомогою змінних CSS, які прив'язані до базового класу .navbar. .navbar-light застарів, а <span class="code-style">.navbar-dark</span class="code-style"> був переписаний для перевизначення змінних CSS замість додавання додаткових стилів.</li>
+</ul>
+<h3>Підтримуваний контент</h3>
+<ul>
+    <li><span class="code-style">.navbar-brand</span> для Вашої компанії, продукту чи назви проекту.</li>
+    <li><span class="code-style">.navbar-nav</span class="code-style"> для повнорозмірної та полегшеної навігації (включаючи підтримку списків, що розкриваються).</li>
+    <li><span class="code-style">.navbar-toggler</span class="code-style"> для використання з плагіном згортання та іншими поведінками перемикання навігації.</li>
+    <li>Утиліти Flex та Spacing для будь-яких елементів керування та дій форми.</li>
+    <li><span class="code-style">.navbar-text</span class="code-style">для додавання вертикально центрованих рядків тексту.</li>
+    <li><span class="code-style">.collapse</span class="code-style"><span class="code-style">.navbar-collapse</span class="code-style"> для угруповання та приховування вмісту навігаційної панелі по батьківській контрольній точці.</li>
+    <li>Додайте необов'язковий <span class="code-style">.navbar-scroll</span class="code-style">, щоб встановити <span class="code-style">max-height</span class="code-style"> і прокручувати розширений вміст навігаційної панелі.</li>
+</ul>
+<p>Ось приклад усіх підкомпонентів, включених у адаптивну світлу навігаційну панель, яка автоматично згортається в контрольній точці <span class="code-style">lg</span class="code-style"> (велика).</p>
+<pre><code class="language-html">
+&lt;nav class=&quot;navbar navbar-expand-lg bg-body-tertiary&quot;&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;Навбар&lt;/a&gt;
+    &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarSupportedContent&quot; aria-controls=&quot;navbarSupportedContent&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Перемикач навигації&quot;&gt;
+      &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarSupportedContent&quot;&gt;
+      &lt;ul class=&quot;navbar-nav me-auto mb-2 mb-lg-0&quot;&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;&gt;Головна&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Посилання&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item dropdown&quot;&gt;
+          &lt;a class=&quot;nav-link dropdown-toggle&quot; href=&quot;#&quot; role=&quot;button&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;
+            Выпадаючий список
+          &lt;/a&gt;
+          &lt;ul class=&quot;dropdown-menu&quot;&gt;
+            &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Дія&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Інша дія&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;hr class=&quot;dropdown-divider&quot;&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Щось ще туть&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link disabled&quot; aria-disabled=&quot;true&quot;&gt;Відключена&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;form class=&quot;d-flex&quot; role=&quot;search&quot;&gt;
+        &lt;input class=&quot;form-control me-2&quot; type=&quot;search&quot; placeholder=&quot;Пошук&quot; aria-label=&quot;Поиск&quot;&gt;
+        &lt;button class=&quot;btn btn-outline-success&quot; type=&quot;submit&quot;&gt;Пошук&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+
+<h3>Бренд</h3>
+<p><span class="code-style">.navbar-brand</span class="code-style"> може застосовуватися до більшості елементів, але якір працює найкраще, оскільки для деяких елементів можуть знадобитися службові класи або стилі користувача.</p>
+<h3>Текст </h3>
+<p>Додайте текст до елемента за допомогою класу <span class="code-style">.navbar-brand</span class="code-style">.</p>
+<pre><code class="language-html">
+&lt;!-- As a link --&gt;
+&lt;nav class=&quot;navbar bg-body-tertiary&quot;&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;Панель навигації&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
+&lt;!-- As a heading --&gt;
+&lt;nav class=&quot;navbar bg-body-tertiary&quot;&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;span class=&quot;navbar-brand mb-0 h1&quot;&gt;Панель навигації&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+<h3>Зображення</h3>
+<p>Ви можете замінити текст усередині <span class="code-style">.navbar-brand</span class="code-style"> на <span class="code-style">&lt;img&gt;</span class="code-style">.</p>
+<h3>Зображення та текст</h3>
+<p>Ви також можете використовувати деякі додаткові утиліти для одночасного додавання зображення та тексту. Зверніть увагу на додавання <span class="code-style">.d-inline-block</span class="code-style"> і <span class="code-style">.align-text-top</span class="code-style"> до <span class="code-style">&lt;img&gt;</span class="code-style">.</p>
+<pre><code class="language-html">
+  &lt;nav class=&quot;navbar bg-body-tertiary&quot;&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;
+      &lt;img src=&quot;/docs/5.3/assets/brand/bootstrap-logo.svg&quot; alt=&quot;Logo&quot; width=&quot;30&quot; height=&quot;24&quot; class=&quot;d-inline-block align-text-top&quot;&gt;
+      Bootstrap
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+
+<h3>Навігація</h3>
+<p>Навігаційні посилання на панелі навігації засновані на параметрах .nav з їх власним класом-модифікатором і вимагають використання перемикач класу для правильного адаптивного стилю. Навігація в навігаційних панелях також збільшуватиметься, щоб займати якнайбільше горизонтального простору, щоб вміст Вашої навігаційної панелі був надійно вирівняний.<br>
+
+  Додайте клас <span class="code-style">.active</span class="code-style"> до <span class="code-style">.nav-link</span class="code-style">, щоб вказати поточну сторінку.<br>
+  
+  Зверніть увагу, що Вам також слід додати атрибут <span class="code-style">aria-curren</span class="code-style">t до активного <span class="code-style">.nav-link</span class="code-style">.</p>
+  <pre><code class="language-html">
+  &lt;nav class=&quot;navbar navbar-expand-lg bg-body-tertiary&quot;&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;Панель навигації&lt;/a&gt;
+    &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNav&quot; aria-controls=&quot;navbarNav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Переключатель навигации&quot;&gt;
+      &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNav&quot;&gt;
+      &lt;ul class=&quot;navbar-nav&quot;&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;&gt;Головна&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Рекомендовані&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Ціна&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link disabled&quot; aria-disabled=&quot;true&quot;&gt;Відключена&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>Оскільки ми використовуємо класи для нашої навігації, Ви можете повністю відмовитися від підходу на основі списків, якщо хочете.</p>
+<pre><code class="language-html">
+&lt;nav class=&quot;navbar navbar-expand-lg bg-body-tertiary&quot;&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;Панель навигації&lt;/a&gt;
+    &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNavAltMarkup&quot; aria-controls=&quot;navbarNavAltMarkup&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Переключатель навигации&quot;&gt;
+      &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNavAltMarkup&quot;&gt;
+      &lt;div class=&quot;navbar-nav&quot;&gt;
+        &lt;a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;&gt;Головна&lt;/a&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Рекомендовані&lt;/a&gt;
+        &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Ціна&lt;/a&gt;
+        &lt;a class=&quot;nav-link disabled&quot; aria-disabled=&quot;true&quot;&gt;Відключена&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+<p>Ви також можете використовувати списки, що розкриваються, на панелі навігації. Для розміщення розкривних меню потрібен елемент оболонки, тому обов'язково використовуйте окремі та вкладені елементи для <span class="code-style">.nav-item</span class="code-style"> та <span class="code-style">.nav-link</span class="code-style">, як показано нижче.</p>
+<pre><code class="language-html">
+  &lt;nav class=&quot;navbar navbar-expand-lg bg-body-tertiary&quot;&gt;
+  &lt;div class=&quot;container-fluid&quot;&gt;
+    &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;Панель навигації&lt;/a&gt;
+    &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-bs-toggle=&quot;collapse&quot; data-bs-target=&quot;#navbarNavDropdown&quot; aria-controls=&quot;navbarNavDropdown&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Переключатель навигации&quot;&gt;
+      &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;navbarNavDropdown&quot;&gt;
+      &lt;ul class=&quot;navbar-nav&quot;&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link active&quot; aria-current=&quot;page&quot; href=&quot;#&quot;&gt;Головна&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Рекомендовані&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item&quot;&gt;
+          &lt;a class=&quot;nav-link&quot; href=&quot;#&quot;&gt;Ціна&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;nav-item dropdown&quot;&gt;
+          &lt;a class=&quot;nav-link dropdown-toggle&quot; href=&quot;#&quot; role=&quot;button&quot; data-bs-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;
+            Выпадаючий список посиланням
+          &lt;/a&gt;
+          &lt;ul class=&quot;dropdown-menu&quot;&gt;
+            &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Дія&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Інша дія&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;Щось ще тут&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+</code></pre>
+</div>
+<div class="rule">
+<h2>Стан завантаження</h2>
+<p>Вкажіть стан завантаження компонента або сторінки за допомогою дзиги Bootstrap, повністю побудованих з використанням HTML, CSS і без JavaScript.</p>
+<h3>Огляд</h3>
+<p>Bootstrap «спінери» можна використовувати для відображення стану завантаження у проектах. Вони побудовані лише за допомогою HTML та CSS, а це означає, що для їх створення не потрібний спеціальній JavaScript. Однак Вам знадобиться спеціальний JavaScript, щоб переключити їхню видимість. Їхній зовнішній вигляд, розташування та розмір можна легко налаштувати за допомогою чудових службових класів.<br>
+
+  Для зручності тут кожен завантажувач включає <span class="code-style">role="status"</span class="code-style"> і вкладений <span class="code-style">&lt;span class="visually-hidden"&gt</span class="code-style">;Завантаження...<span class="code-style">&lt;/span&gt;</span class="code-style">.</p>
+<h3>Спіннер із кордоном</h3>
+<p>Використовуйте спінери з кордоном для легкого індикатора завантаження.</p>
+<pre><code class="language-html">
+  &lt;div class=&quot;spinner-border&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Кольори</h3>
+<p>Спіннер з кордоном використовує <span class="code-style">currentColor</span class="code-style"> як свій <span class="code-style">border-color</span class="code-style">, що означає, що Ви можете налаштувати колір за допомогою утиліт кольору тексту. Ви можете використовувати будь-яку з наших утиліт кольору тексту на стандартному спіннері.</p>
+<pre><code class="language-html">
+  &lt;div class=&quot;spinner-border text-primary&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-border text-secondary&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-border text-success&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-border text-danger&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-border text-warning&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-border text-info&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-border text-light&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-border text-dark&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Спіннер, що збільшується</h3>
+<p>Якщо Вам не подобається спіннер з межами, перейдіть на спіннер, що збільшується. Хоча технічно він не обертається, він постійно зростає!</p>
+<pre><code class="language-html">
+  &lt;div class=&quot;spinner-grow&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Знову ж таки, цей спіннер побудований за допомогою currentColor, так що ви можете легко змінити його зовнішній вигляд за допомогою утиліт кольору тексту. Тут він виділено синім кольором разом із підтримуваними варіантами.</p>
+<pre><code class="language-html">
+  &lt;div class=&quot;spinner-grow text-primary&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-grow text-secondary&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-grow text-success&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-grow text-danger&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-grow text-warning&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-grow text-info&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-grow text-light&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;spinner-grow text-dark&quot; role=&quot;status&quot;&gt;
+  &lt;span class=&quot;visually-hidden&quot;&gt;Завантаження...&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Вирівнювання</h3>
+<p>Спінери в Bootstrap побудовані за допомогою <span class="code-style">rem</span>, <span class="code-style">currentColor</span class="code-style"> і <span class="code-style">display: inline-flex</span class="code-style">. Це означає, що їх можна легко змінити розмір, перефарбувати та швидко вирівняти.</p>
+  <a href="Сітка.html" class="next-page-link">Перейти до наступного розділу...</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<a href="#top" class="scroll-to-top">
+  <img src="arrow-up.png" alt="Догори">
+</a>
+<footer>
+    <div class="footer-content">
+        <div class="contact-item">
+          <img class='footer-logo' img src="logo-01.png" />
+        </div>
+        <div class="contact-item">
+          <h3>Навігація</h3>
+          <ul class="navigation-list">
+            <li><a href ="Головна.html#">Головна</a></li>
+            <li><a href ="Основи.html#">Основи</a></li>
+            <li><a href ="Компоненти.html#">Компоненти</a></li>
+            <li><a href ="Сітка.html">Сітка</a></li>
+            <li><a href ="Адаптивність.html#">Адаптивність</a></li>
+            <li><a href ="Про нас.html#">Про нас</a></li>
+          </ul>
+        </div>
+        <div class="contact-item">
+          <h3>Соц. мережі</h3>
+          <a href="https://facebook.com" class="social-icon">Facebook</a>
+          <a href="https://twitter.com" class="social-icon">Twitter</a>
+          <a href="https://instagram.com" class="social-icon">Instagram</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

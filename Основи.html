@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Основи</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class = "header2" id="top">
+        <div class="header-content">
+            <img class='logo' img src="logo-01.png" />
+            <div class="nav">
+                <ul>
+                    <li><a href ="Головна.html#">Головна</a></li>
+                    <li><a href ="Основи.html#">Основи</a></li>
+                    <li><a href ="Компоненти.html#">Компоненти</a></li>
+                    <li><a href ="Сітка.html#">Сітка</a></li>
+                    <li><a href ="Адаптивність.html#">Адаптивність</a></li>
+                    <li><a href ="Про нас.html#">Про нас</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<h1>ОСНОВИ</h1>
+<div class="rule">
+        <h2>Розпочати роботу з Bootstrap</h2> 
+        <h3>Швидкий старт:</h3>
+        <p>Створіть новий файл index.html у корені вашого проекту. Увімкніть також тег <span class="code-style"> &lt;meta name="viewport"&gt;</span> для правильної чуйної поведінки на мобільних пристроях.</p>
+            <pre><code class="language-html">
+                &lt;!doctype html&gt;
+                &lt;html lang=&quot;uk&quot;&gt;
+                  &lt;head&gt;
+                    &lt;meta charset=&quot;utf-8&quot;&gt;
+                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+                    &lt;title&gt;Демо Bootstrap&lt;/title&gt;
+                  &lt;/head&gt;
+                  &lt;body&gt;
+                    &lt;h1&gt;Привіт, світ!&lt;/h1&gt;
+                  &lt;/body&gt;
+                &lt;/html&gt;                   
+            </code></pre>
+        <h3>Увімкніть CSS та JS Bootstrap:</h3>
+        <p>Помістіть тег <span class="code-style">&lt;link&gt;</span> у <span class="code-style">&lt;head&gt;</span> для нашого CSS і тег <span class="code-style">&lt;script&gt;</span> для нашого пакету JavaScript (включаючи Popper для позиціонування розкривних списків, спливаючі повідомлення та підказки) перед закриваючим <span class="code-style">&lt;/body&gt;</span>.</p>
+        <pre><code class="language-html">
+                        &lt;!doctype html&gt;
+                &lt;html lang=&quot;ru&quot;&gt;
+                &lt;head&gt;
+                    &lt;meta charset=&quot;utf-8&quot;&gt;
+                    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+                    &lt;title&gt;Демо Bootstrap&lt;/title&gt;
+                    &lt;link href=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css&quot; rel=&quot;stylesheet&quot; integrity=&quot;sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH&quot; crossorigin=&quot;anonymous&quot;&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Привіт, світ!&lt;/h1&gt;
+                    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js&quot; integrity=&quot;sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+</code></pre>
+        <p>Ви також можете включити Popper та JS окремо. Якщо ви не плануєте використовувати розкривні списки, спливаючі вікна або підказки, заощаджуйте кілька кілобайт, не включаючи Popper.</p>
+        <pre><code class="language-html">
+
+            &lt;script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"&gt;</script>
+            &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"&gt;</script>
+        </code></pre>
+        <h3>Привіт світ! </h3>
+        <p> Відкрийте сторінку у вибраному браузері, щоб побачити сторінку з початковим завантаженням. Тепер ви можете почати збирання за допомогою Bootstrap, створивши свій власний макет, додавши десятки компонентів використовуючи наші підказки на науступних сторінках.</p>
+ </div>
+ <div class="rule">
+    <h2> Важливі глобальні змінні</h2> 
+    <h3>HTML5 doctype:</h3>
+    <p>Bootstrap вимагає використання типу документу HTML5. Без нього ви побачите химерний та незавершений стиль.</p>
+    <div class="code-container">
+        <pre><code class="language-html">
+            &lt;!doctype html&gt;
+            &lt;html&gt; lang="uk"&gt;
+              ...
+              &lt;/html&gt;
+        </code></pre>
+    </div>
+    <h3>Viewport meta </h3>
+    <p>Bootstrap розроблений спочатку для мобільних пристроїв, стратегія, в якій спочатку оптимізуємо код для мобільних пристроїв, а потім масштабуємо компоненти за необхідності, використовуючи медіа-запити CSS. Щоб забезпечити правильний рендеринг та сенсорне масштабування для всіх пристроїв, додайте метатег адаптивного вікна перегляду до <span class="code-style">&lt;head&gt;</span>.</p>
+        <div class="code-container">
+            <pre><code class="language-html">
+                &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+            </code></pre>
+        </div>
+            <h3>Box-sizing</h3>      
+
+    <p>Для більш простого визначення розміру CSS ми перемикаємо глобальне значення <span class="code-style">box-sizing</span> з <span class="code-style">content-box</span> на <span class="code-style">border-box</span>. Це гарантує, що padding не вплине на остаточну обчислену ширину елемента, але може викликати проблеми з деякими сторонніми програмами, такими як Google Maps та Google Custom Search Engine.<br>
+
+        У поодиноких випадках вам потрібно перевизначити його, використовуйте щось на зразок такого:</p>
+        <div class="code-container">
+            <pre><code class="language-html">
+                .selector-for-some-widget {
+                box-sizing: content-box;
+                }
+            </code></pre>
+        </div>
+<p>У наведеному вище фрагменті вкладені елементи, включаючи згенерований контент за допомогою <span class="code-style">:: before</span class="code-style"> та <span class="code-style">:: after</span class="code-style">, будуть успадковувати зазначений <span class="code-style">box-sizing</span class="code-style"> для цього <span class="code-style">.selector-for-some-widget</span class="code-style">.</p>
+<h3>Reboot</h3>
+<p>Для покращення крос-браузерного рендерингу використовується Reboot для виправлення невідповідностей між браузерами та пристроями, забезпечуючи при цьому дещо самостійніше скидання загальних елементів HTML.</p>
+</div>
+<div class="rule">
+<h2>Браузери та пристрої</h2>
+<h3>Підтримувані браузери</h3>
+<p>Bootstrap підтримує останні стабільні випуски всіх основних браузерів та платформ.<br>
+
+    Альтернативні браузери, які використовують останню версію WebKit, Blink або Gecko, безпосередньо або через API веб-подання платформи, явно не підтримуються. Однак Bootstrap повинен (у більшості випадків) правильно відображатися та працювати у цих браузерах. Більш конкретну інформацію про підтримку наведено нижче.</p>
+
+        <pre><code class="language-html">
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+        # https://github.com/browserslist/browserslist#readme
+
+        &gt;= 0.5%
+        last 2 major versions
+        not dead
+        Chrome &gt;= 60
+        Firefox &gt;= 60
+        Firefox ESR
+        iOS &gt;= 12
+        Safari &lt;= 12
+        not Explorer &lt;= 11
+        </code></pre>
+
+    <h3>Мобільні пристрої</h3>
+    <p>Взагалі, Bootstrap підтримує останні версії браузерів за замовчуванням для кожної основної платформи. Зверніть увагу, що проксі-браузери (такі як Opera Mini, Opera Mobile Turbo mode, UC Browser Mini, Amazon Silk) не підтримуються.</p>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Chrome</th>
+                    <th>Firefox</th>
+                    <th>Safari</th>
+                    <th>Android Browser & WebView</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Android</td>
+                    <td>Підтримується</td>
+                    <td>Підтримується</td>
+                    <td>—</td>
+                    <td>v6.0+</td>
+                </tr>
+                <tr>
+                    <td>iOS</td>
+                    <td>Підтримується</td>
+                    <td>Підтримується</td>
+                    <td>Підтримується</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+    </div class="table-container">
+    <h3>Настільні браузери</h3>
+    <p>Так само підтримуються останні версії більшості настільних браузерів.</p>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Chrome</th>
+                    <th>Firefox</th>
+                    <th>Safari</th>
+                    <th>Android Browser & WebView</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Android</td>
+                    <td>Підтримується</td>
+                    <td>Підтримується</td>
+                    <td>—</td>
+                    <td>v6.0+</td>
+                </tr>
+                <tr>
+                    <td>iOS</td>
+                    <td>Підтримується</td>
+                    <td>Підтримується</td>
+                    <td>Підтримується</td>
+                    <td>—</td>
+                </tr>
+            </tbody>
+        </table>
+    </div class="table-container">
+    <p>Для Firefox, крім останньої нормальної стабільної версії, також підтримується останню версію Firefox Extended Support Release (ESR) version of Firefox.<br>
+
+        Неофіційно Bootstrap має виглядати і поводитися досить добре у Chromium та Chrome для Linux та Firefox для Linux, хоча офіційно вони не підтримуються.</p>
+<h3>Internet Explorer</h3>
+<p>Internet Explorer не підтримується. Якщо потрібна підтримка Internet Explorer, використовуйте Bootstrap v4.</p>
+</div>
+<div class="rule">
+<h2>Модальні вікна та списки, що випадають на мобільних пристроях</h2>
+<h3>Переповнення та прокручування</h3>
+<p>Підтримка <span class="code-style">overflow: hidden;</span class="code-style"> в елементі <span class="code-style">&lt;body&gt;</span class="code-style"> дуже обмежена в iOS та Android. З цією метою, коли ви прокручуєте верхню або нижню частину модального вікна в браузері будь-якого з цих пристроїв, вміст <body> починає прокручуватися.</p>
+    <h3>Текстові поля iOS та прокручування</h3>
+   <p> Починаючи з iOS 9.2, поки модальне вікно відкрито, якщо початковий дотик жесту прокручування знаходиться в межах текстового <span class="code-style">&lt;input&gt;</span class="code-style"> або <span class="code-style">&lt;textarea&gt;</span class="code-style">, вміст <span class="code-style">&lt;body&gt;</span class="code-style"> під модальним вікном прокручуватиметься замість самого модального вікна.
+</p>
+    <h3>Випадаючі меню навігаційної панелі</h3>
+    <p>Елемент .dropdown-backdrop не використовується в навігаційній панелі iOS через складність z-індексу. Таким чином, щоб закрити списки, що розкриваються на панелі навігації, Ви повинні безпосередньо клацнути елемент розкривного списку (або будь-який інший елемент, який викличе подію клацання в iOS).
+</p>
+    <h3>Масштабування у браузері</h3>
+    <p> При масштабуванні сторінки неминуче з'являються артефакти рендерингу в деяких компонентах як в Bootstrap, так і в іншій частині Інтернету. Залежно від проблеми ми можемо її виправити (спочатку виконайте пошук, а потім у разі необхідності відкрийте проблему). 
+</p>
+    <h3>Валідатори</h3>
+    <p>  Щоб забезпечити максимальну зручність роботи старих браузерів та браузерів з помилками, Bootstrap використовує хакі браузера CSS у кількох місцях для націлювання спеціального CSS на певні версії браузера, щоб уникнути помилок у самі браузери. Ці хакі зі зрозумілих причин змушують валідаторів CSS скаржитися на їхню недійсність. У деяких випадках також використовуються передові функції CSS, які ще не повністю стандартизовані, але використовуються виключно для прогресивного покращення.<br>
+    
+    Ці попередження про перевірку не мають значення на практиці, оскільки не хакерська частина CSS дійсно повністю перевіряє, а хакерські частини не заважають правильному функціонуванню не хакерської частини.
+    
+</p>
+</div>
+<div class="rule">
+<h2>Sass</h2>
+<p>Використовуйте вихідні файли Sass, щоб скористатися перевагами змінних, карт, домішок та функцій, які допоможуть Вам швидше створювати та налаштовувати свій проект.
+   </p>
+<h3>Файлова структура</h3>
+<p>Уникайте зміни файлів ядра Bootstrap. Для Sass це означає створення власної таблиці стилів, яка імпортує Bootstrap, щоб ви могли змінювати та розширювати її. Припускаючи, що ви використовуєте менеджер пакетів, такий як npm, у вас буде файлова структура, яка виглядає так:</p>
+<pre><code class="language-html">
+    your-project/
+├── scss/
+│   └── custom.scss
+└── node_modules/
+│   └── bootstrap/
+│       ├── js/
+│       └── scss/
+└── index.html
+</code></pre>
+<p>Якщо ви завантажили вихідні файли і не використовуєте менеджер пакетів, ви можете створити вручну щось схоже на цю структуру, зберігаючи вихідні файли Bootstrap окремо від ваших власних.</p>
+<pre><code class="language-html">
+    your-project/
+    ├── scss/
+    │   └── custom.scss
+    ├── bootstrap/
+    │   ├── js/
+    │   └── scss/
+    └── index.html
+</code></pre>
+<h3>Імпорт</h3>
+<p>У свій custom.scss Ви імпортуєте вихідні файли Sass для Bootstrap. У Вас є два варіанти: увімкнути весь Bootstrap або вибрати потрібні Вам частини. Ми заохочуємо останнє, але майте на увазі, що між компонентами є деякі вимоги та залежності. Вам також необхідно буде включити JavaScript для плагінів.</p>
+<pre><code class="language-html">
+    // Custom.scss
+// Вариант А: Включити увесь Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here
+</code></pre>
+
+<pre><code class="language-html">
+    // Custom.scss
+// Вариант Б. Включити частини Bootstrap
+
+// 1. Спочатку ввімкініть функції (щоб ви могли керувати кольорами, SVG, обчисленням і т.д.)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Включіть сюди будь-які предвизначення змінних за замовчуванням
+
+// 3. Ввімкінть інщі потрібні таблиці стилей Bootstrap (включаючи будь-які таблиці стилей кольоровго режиму)
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Ввімкніть сюди будь-які превизначення карт за замовчуванням
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. За необхідності ввімкіть будь-які інщі частини
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+
+// 7. За бажанням додайте API утиліт в останню чергу, щоб згенерувати класи на основі мапи Sass в `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api";
+
+// 8. Додайте сюди додатковий користувацький код
+</code></pre>
+<p>З цією настройкою, Ви можете розпочати зміну будь-яких змінних і карт Sass у Вашому custom.scss. Ви також можете почати додавати частини Bootstrap у розділі // Optional у міру необхідності. Ми пропонуємо використовувати повний стек імпорту з нашого файлу bootstrap.scss як відправна точка.</p>
+<h3>Компіляція</h3>
+<p>Щоб використовувати ваш код Sass як CSS в браузері, вам потрібен компілятор Sass. Sass поставляється у вигляді пакета CLI, але ви також можете скомпілювати його за допомогою інших інструментів збирання, таких як Gulp або Webpack, або за допомогою програми з графічним інтерфейсом. Деякі IDE також мають вбудовані компілятори Sass або розширення, що завантажуються.<br>
+
+    Радимо використовувати CLI для компіляції Sass, але ви можете використовувати будь-який метод, який ви віддаєте перевагу. З командного рядка виконайте таке:</p>
+<pre><code class="language-html">
+    # Install Sass globally
+npm install -g sass
+
+# Watch your custom Sass for changes and compile it to CSS
+sass --watch ./scss/custom.scss ./css/custom.css
+</code></pre>
+<h3>Увімкнення</h3>
+<p>Як тільки ваш CSS скомпілюваний, ви можете включити його до файлів HTML. Всередині вашого index.html ви захочете увімкнути скомпільований файл CSS. Обов'язково оновіть шлях до скомпільованого файлу CSS, якщо ви його змінили.</p>
+<pre><code class="language-html">
+    &lt;!doctype html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+    &lt;title&gt;Custom Bootstrap&lt;/title&gt;
+    &lt;link href="/css/custom.css" rel="stylesheet"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello, world!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre>
+<h3>Значення змінних за замовчуванням</h3>
+<p>Кожна змінна Sass у Bootstrap включає прапор <span class="code-style">!default</span class="code-style">, що дозволяє перевизначити значення змінної за замовчуванням у Вашому власному Sass без зміни вихідного коду Bootstrap. Скопіюйте та вставте змінні при необхідності, змініть їх значення та видаліть прапор <span class="code-style">!default</span class="code-style">. Якщо змінна вже була призначена, вона не буде повторно призначена за замовчуванням у Bootstrap.<br>
+
+    Ви знайдете повний список змінних Bootstrap у scss/_variables.scss. Деякі змінні мають значення <span class="code-style">null</span class="code-style">, ці змінні не виводять властивість, якщо вони не перевизначені у конфігурації.<br>
+    
+    Перевизначення змінних має відбуватися після імпорту функцій, але до решти імпорту.<br>
+    
+    Ось приклад, який змінює background-color та color для <body> при імпорті та компіляції Bootstrap через npm:</p>
+<pre><code class="language-html">
+    // Обов'язкові
+@import "../node_modules/bootstrap/scss/functions";
+
+// Перевизначення змінних за замовчуванням
+$body-bg: #000;
+$body-color: #111;
+
+// Обов'язкові
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// Додаткові компоненти Bootstrap тут
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+// etc
+</code></pre>
+<a href="Компоненти.html#" class="next-page-link">Перейти до наступного розділу...</a>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <a href="#top" class="scroll-to-top">
+        <img src="arrow-up.png" alt="Догори">
+    </a>
+<footer>
+    <div class="footer-content">
+        <div class="contact-item">
+          <img class='footer-logo' img src="logo-01.png" />
+        </div>
+        <div class="contact-item">
+          <h3>Навігація</h3>
+          <ul class="navigation-list">
+            <li><a href ="Головна.html#">Головна</a></li>
+            <li><a href ="Основи.html#">Основи</a></li>
+            <li><a href ="Компоненти.html#">Компоненти</a></li>
+            <li><a href ="Сітка.html">Сітка</a></li>
+            <li><a href ="Адаптивність.html#">Адаптивність</a></li>
+            <li><a href ="Про нас.html#">Про нас</a></li>
+          </ul>
+        </div>
+        <div class="contact-item">
+          <h3>Соц. мережі</h3>
+          <a href="https://facebook.com" class="social-icon">Facebook</a>
+          <a href="https://twitter.com" class="social-icon">Twitter</a>
+          <a href="https://instagram.com" class="social-icon">Instagram</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

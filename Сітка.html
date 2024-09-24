@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сітка</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class = "header2" id="top">
+        <div class="header-content">
+          <img class='logo' img src="logo-01.png" />
+            <div class="nav">
+                <ul>
+                    <li><a href ="Головна.html#">Головна</a></li>
+                    <li><a href ="Основи.html#">Основи</a></li>
+                    <li><a href ="Компоненти.html#">Компоненти</a></li>
+                    <li><a href ="Сітка.html">Сітка</a></li>
+                    <li><a href ="Адаптивність.html#">Адаптивність</a></li>
+                    <li><a href ="Про нас.html#">Про нас</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h1>СІТКА</h1>
+   
+<div class="rule">
+<h2>Система сіток</h2>
+<p>Використовуйте потужну сітку flexbox, орієнтовану на мобільні пристрої, для створення макетів усіх форм та розмірів завдяки системі з дванадцяти колонок, шести адаптивним рівням за умовчанням, змінним та міксинам Sass, а також десяткам взначених класів.</p>
+<h3>Приклад</h3>
+<p>Система сіток Bootstrap використовує серію контейнерів, рядків та колонок для компонування та вирівнювання вмісту. Він побудований за допомогою flexbox та повністю адаптивний. Нижче наведено приклад та докладне пояснення того, як поєднується сітка.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+      Колонка
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      Колонка
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      Колонка
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>У наведеному вище прикладі створюються три колонки однакової ширини на всіх пристроях та у вікнах перегляду з використанням взначених класів сітки. Ці колонки центруються на сторінці з батьківським <span class="code-style">.container</span class="code-style">.</p>
+<h3>Як це влаштовано</h3>
+<p>Ось як поєднується сітка:</p>
+<ul>
+    <li>Сітка підтримує шість адаптивних контрольних точок. Контрольні точки засновані на медіа-запитах min-width, тобто вони впливають на цю контрольну точку і всі перераховані вище (наприклад, .col-sm-4 застосовується до sm, md, lg, xl і xxl). Це означає, що Ви можете керувати розміром та поведінкою контейнера та колонки за допомогою кожної контрольної точки.</li>
+    <li>Контейнери центрують та розміщують Ваш контент по горзонталі. Використовуйте .container для адаптивної ширини в пікселях, .container-fluid для width: 100% у всіх вікнах перегляду та на всіх пристроях або адаптивний контейнер (наприклад, .container-md) для комбінації рухомої та піксельної ширини.</li>
+    <li>Ряди (rows) є оболонками для колонок. Кожна колонка має горзонтальний padding (званий проміжком) для керування простором між ними. Потім цьому padding протидіють рядки з негативними полями, щоб забезпечити візуальне вирівнювання вмісту колонок зліва. Рядки також підтримують класи модифікаторів для одноманітного застосування розмірів колонок і проміжних класів для зміни інтервалу Вашого контенту.</li>
+    <li>Колонки неймовірно гнучкі. У кожному рядку є 12 шаблонів колонок, що дозволяє створювати різні комбінації елементів, що охоплюють будь-яку кількість колонок. Класи колонок вказують кількість колонок шаблону, які потрібно охопити (наприклад, col-4 охоплює чотири). width задаються у відсотках, тому Ви маєте однаковий відносний розмір.</li>
+    <li>Проміжки також є адаптивними та настроюваними. Доступні класи проміжків у всіх контрольних точках з тими самими розмірами, як і поля і відступи. Змініть горзонтальні проміжки на класи .gx-*, вертикальні проміжки на .gy-* або всі проміжки на класи .g-*. .g-0 також доступний для видалення проміжків.</li>
+    <li>Sass змінні, карти та міксини керують сіткою. Якщо ви не бажаєте використовувати певні класи сітки в Bootstrap, ви можете використовувати джерело сітки Sass для створення власних з більшою семантичною розміткою. Також включаються деякі властивості користувача CSS для використання цих змінних Sass для ще більшої гнучкості.</li>
+</ul>
+<h3>Параметри сітки</h3>
+<p>Система сіток Bootstrap може адаптуватися до всіх шести контрольних точок за умовчанням і будь-яких контрольних точок, що налаштовуються Вами. Шість рівнів сітки за промовчанням:</p>
+<ul>
+    <li>Дуже маленький – Extra small (xs)</li>
+    <li>Маленький - Small (sm)</li>
+    <li>Середній – Medium (md)</li>
+    <li>Великий - Large (lg)</li>
+    <li>Дуже великий - Extra large (xl)</li>
+    <li>Величезний - Extra extra large (xxl)</li>
+</ul>
+<p>Як зазначалося вище, кожна з цих контрольних точок має власний контейнер, унікальний префікс класу та модифікатори. Ось як змінюється сітка у цих контрольних точках:</p>
+<div class="table-container">
+  <table>
+      <thead>
+          <tr>
+              <th></th>
+              <th>xs<br><small>&lt;576px</small></th>
+              <th>sm<br><small>&ge;576px</small></th>
+              <th>md<br><small>&ge;768px</small></th>
+              <th>lg<br><small>&ge;992px</small></th>
+              <th>xl<br><small>&ge;1200px</small></th>
+              <th>xxl<br><small>&ge;1400px</small></th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Container <span class="note">max-width</span></td>
+              <td>None (auto)</td>
+              <td>540px</td>
+              <td>720px</td>
+              <td>960px</td>
+              <td>1140px</td>
+              <td>1320px</td>
+          </tr>
+          <tr>
+              <td>Class prefix</td>
+              <td><span class="prefix">.col-</span></td>
+              <td><span class="prefix">.col-sm-</span></td>
+              <td><span class="prefix">.col-md-</span></td>
+              <td><span class="prefix">.col-lg-</span></td>
+              <td><span class="prefix">.col-xl-</span></td>
+              <td><span class="prefix">.col-xxl-</span></td>
+          </tr>
+          <tr>
+              <td># of columns</td>
+              <td>12</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>Gutter width</td>
+              <td>1.5rem (.75rem on left and right)</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>Custom gutters</td>
+              <td><a href="#">Yes</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>Nestable</td>
+              <td><a href="#">Yes</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td>Column ordering</td>
+              <td><a href="#">Yes</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+          </tr>
+      </tbody>
+  </table>
+</div class="table-container">
+<h3>Колонки з автоматичним компонуванням</h3>
+<p>Використовуйте класи стовпчиків, специфічні для контрольної точки, для зручного взначення розміру стовпчика без явного нумерованого класу, наприклад <span class="code-style">.col-sm-6</span class="code-style">.</p>
+<h3>Рівна ширина</h3>
+<p>Наприклад, ось два макети сітки, які застосовуються до кожного пристрою та вікна перегляду, від <span class="code-style">xs</span class="code-style"> до <span class="code-style">xxl</span class="code-style">. Додайте будь-яку кількість класів без одиниць виміру для кожної потрібної контрольної точки, і кожна колонка буде однаковою шириною.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+      1 з 2
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      2 з 2
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+      1 з 3
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      2 з 3
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      3 з 3
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Встановлення ширини одного стовпчика</h3>
+<p>Автоматичне компонування колонок сітки Flexbox також означає, що Ви можете встановити ширину однієї колонки та автоматично змінювати розмір колонок-братів навколо нього. Ви можете використовувати певні класи сітки (як показано нижче), міксини сітки або вбудовану ширину. Зверніть увагу, що розмір інших колонок змінюватиметься незалежно від ширини центральної колонки.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col"&gt;
+        1 з 3
+      &lt;/div&gt;
+      &lt;div class="col-6"&gt;
+        2 з 3 (ширше)
+      &lt;/div&gt;
+      &lt;div class="col"&gt;
+        3 з 3
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col"&gt;
+        1 з 3
+      &lt;/div&gt;
+      &lt;div class="col-5"&gt;
+        2 з 3 (ширше)
+      &lt;/div&gt;
+      &lt;div class="col"&gt;
+        3 з 3
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<h3>Змінна ширина контенту</h3>
+<p>Використовуйте класи <span class="code-style">col-{breakpoint}-auto</span class="code-style"> для взначення розміру колонок залежно від природної ширини вмісту.</p>
+  <pre><code class="language-html">
+  &lt;div class="container"&gt;
+  &lt;div class="row justify-content-md-center"&gt;
+    &lt;div class="col col-lg-2"&gt;
+      1 з 3
+    &lt;/div&gt;
+    &lt;div class="col-md-auto"&gt;
+      Змінна ширина контенту
+    &lt;/div&gt;
+    &lt;div class="col col-lg-2"&gt;
+      3 з 3
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col"&gt;
+      1 з 3
+    &lt;/div&gt;
+    &lt;div class="col-md-auto"&gt;
+      Змінна ширина контенту
+    &lt;/div&gt;
+    &lt;div class="col col-lg-2"&gt;
+      3 з 3
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+  <h3>Адаптивні класи</h3>
+<p>Сітка Bootstrap включає шість рівнів взначених класів для створення складних адаптивних макетів. Налаштуйте розмір колонок на дуже маленьких, маленьких, середніх, великих або дуже великих пристроях на власний розсуд.</p>
+<h3>Усі контрольні точки</h3>
+<p>Для сіток, однакових від найменших до найбільших, використовуйте класи <span class="code-style">.col</span class="code-style"> та <span class="code-style">.col-*</span class="code-style">. Вкажіть нумерований клас, якщо Вам потрібна стовпчик певного розміру; в іншому випадку не соромтеся використовувати <span class="code-style">.col</span class="code-style">.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col"&gt;col&lt;/div&gt;
+      &lt;div class="col"&gt;col&lt;/div&gt;
+      &lt;div class="col"&gt;col&lt;/div&gt;
+      &lt;div class="col"&gt;col&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-8"&gt;col-8&lt;/div&gt;
+      &lt;div class="col-4"&gt;col-4&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+</code></pre>
+<h3>Додавання по горзонталі</h3>
+<p>Використовуючи один набір класів <span class="code-style">.col-sm-*</span class="code-style">, Ви можете створити базову систему сіток, яка починається з накопичення та стає горзонтальною у малій контрольній точці <span class="code-style">(sm)</span class="code-style">.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-sm-8"&gt;col-sm-8&lt;/div&gt;
+    &lt;div class="col-sm-4"&gt;col-sm-4&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-sm"&gt;col-sm&lt;/div&gt;
+    &lt;div class="col-sm"&gt;col-sm&lt;/div&gt;
+    &lt;div class="col-sm"&gt;col-sm&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Змішання та поєднання</h3>
+<p>Чи не хочете, щоб Ваші колонки просто складалися в кілька ярусів сітки? За потреби використовуйте комбінацію різних класів для кожного рівня. Див. приклад нижче, щоб краще зрозуміти, як усе це працює.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;!-- Складіть колонки на мобільному пристрої, зробивши одну повну, а іншу половинну --&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-8"&gt;.col-md-8&lt;/div&gt;
+    &lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Ширина колонок починається з 50% на мобільних пристроях та збільшується до 33,3% на комп'ютерах. --&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+    &lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+    &lt;div class="col-6 col-md-4"&gt;.col-6 .col-md-4&lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- колонки завжди мають ширину 50% на мобільних та настільних комп'ютерах. --&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-6"&gt;.col-6&lt;/div&gt;
+    &lt;div class="col-6"&gt;.col-6&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Ряд колонок</h3>
+<p>Використовуйте адаптивні класи <span class="code-style">.row-cols-*</span class="code-style">, щоб швидко встановити кількість стовпців, які найкраще відображають ваш контент та макет. У той час як звичайні класи <span class="code-style">.col-*</span class="code-style"> застосовуються до окремих стовпців (наприклад, <span class="code-style">.col-md-4</span class="code-style">), класи стовпців рядків встановлюються в батьківському .row як ярлик. За допомогою <span class="code-style">.row-cols-auto</span class="code-style"> ви можете додати стовпцям їхню природну ширину.<br>
+
+    Використовуйте ці класи стовпців для швидкого створення базових макетів сітки або для управління макетами карток.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row row-cols-2"&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row row-cols-3"&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row row-cols-auto"&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row row-cols-4"&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row row-cols-4"&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col-6"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<pre><code class="language-html">
+&lt;div class="container"&gt;
+  &lt;div class="row row-cols-1 row-cols-sm-2 row-cols-md-4"&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+    &lt;div class="col"&gt;Колонка&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Ви також можете використовувати супутній міксин Sass, <span class="code-style">row-cols()</span class="code-style">:</p>
+<pre><code class="language-html">
+    .element {
+        // Три колонки для початку
+        @include row-cols(3);
+      
+        // П'ять колонок від середньої контрольної точки вгору
+        @include media-breakpoint-up(md) {
+          @include row-cols(5);
+        }
+      }
+</code></pre>
+</div>
+<div class="rule">
+<h2>Колонки</h2>
+<p>Дізнайтеся, як змінювати колонки за допомогою кількох опцій для вирівнювання, упорядкування та усунення завдяки системі сіток flexbox. Крім того, дізнайтеся, як використовувати класи колонок для керування шириною елементів без сітки.</p>
+<h3>Як вони працюють</h3>
+<ul>
+    <li>Колонки базуються на архітектурі Flexbox сітки. Flexbox означає, що ми маємо можливості для зміни окремих колонок і модифікації груп колонок на рівні рядка. Ви вибираєте, як стовпчики збільшуються, зменшуються або змінюються іншим чином.</li>
+    <li>При побудові макетів сітки весь вміст розміщується в колонках. Ієрархія сітки Bootstrap йде від контейнера до рядка до стовпчика Вашого вмісту. В окремих випадках Ви можете комбінувати контент і колонку, але майте на увазі, що це може мати непередбачені наслідки.</li>
+    <li>Bootstrap включає взначені класи для створення швидких та чуйних макетів. Завдяки шести контрольним точкам та дюжині колонок на кожному рівні сітки у нас є десятки класів вже побудований для Вас, щоб створювати бажані макети. За бажання це можна вимкнути через Sass.</li>
+</ul>
+<h3>Вирівнювання</h3>
+<p>Використовуйте утиліти вирівнювання flexbox для вертикального та горзонтального вирівнювання колонок.</p>
+<h3>Вертикальне вирівнювання</h3>
+<p>Змініть вертикальне вирівнювання за допомогою будь-якого адаптивного класу <span class="code-style">align-items-*</span class="code-style">.</p>
+
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+    &lt;div class="row align-items-start"&gt;
+      &lt;div class="col"&gt;
+        Одна з трьох колонок
+      &lt;/div&gt;
+      &lt;div class="col"&gt;
+        Одна з трьох колонок
+      &lt;/div&gt;
+      &lt;div class="col"&gt;
+        Одна з трьох колонок
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+</code></pre>
+
+<pre><code class="language-html">
+    &lt;div class="container text-center"&gt;
+  &lt;div class="row align-items-center"&gt;
+    &lt;div class="col"&gt;
+      Одна з трьох колонок
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      Одна з трьох колонок
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      Одна з трьох колонок
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+
+<pre><code class="language-html">
+    &lt;div class="container text-center"&gt;
+  &lt;div class="row align-items-end"&gt;
+    &lt;div class="col"&gt;
+      Одна з трьох колонок
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      Одна з трьох колонок
+    &lt;/div&gt;
+    &lt;div class="col"&gt;
+      Одна з трьох колонок
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col align-self-start"&gt;
+      Одна з трьох колонок
+    &lt;/div&gt;
+    &lt;div class="col align-self-center"&gt;
+      Одна з трьох колонок
+    &lt;/div&gt;
+    &lt;div class="col align-self-end"&gt;
+      Одна з трьох колонок
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<h3>Горзонтальне вирівнювання</h3>
+<p>Змініть горзонтальне вирівнювання за допомогою адаптивного класу <span class="code-style">justify-content-*</span class="code-style">.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row justify-content-start"&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row justify-content-center"&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row justify-content-end"&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row justify-content-around"&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row justify-content-between"&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row justify-content-evenly"&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+    &lt;div class="col-4"&gt;
+      Одна з двох колонок
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Обгортання колонок</h3>
+<p>Якщо в одному рядку міститься більше 12 колонок, кожна група додаткових колонок, як одне ціле, переноситься на новий рядок.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-9"&gt;.col-9&lt;/div&gt;
+    &lt;div class="col-4"&gt;.col-4&lt;br&gt;Оскільки 9 + 4 = 13 &amp;gt; 12, цей div шириною в 4 колонки переноситься на нову строку як один безперервний блок.&lt;/div&gt;
+    &lt;div class="col-6"&gt;.col-6&lt;br&gt;Наступні колонки продовжуються вздовж нового рядка.&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h3>Розриви колонок</h3>
+<p>Розбиття колонок на новий рядок у flexbox вимагає невеликого хаку: додайте елемент із <span class="code-style">width: 100%</span class="code-style"> скрізь, де Ви хочете перенести колонки на новий рядок. Зазвичай це досягається за допомогою кількох <span class="code-style">.row</span class="code-style">, але не кожен метод реалізації може це враховувати.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-6 col-sm-3"&gt;.col-6 .col-sm-3&lt;/div&gt;
+    &lt;div class="col-6 col-sm-3"&gt;.col-6 .col-sm-3&lt;/div&gt;
+
+    &lt;!-- Змусить наступні колонки переходити на новий рядок --&gt;
+    &lt;div class="w-100"&gt;&lt;/div&gt;
+
+    &lt;div class="col-6 col-sm-3"&gt;.col-6 .col-sm-3&lt;/div&gt;
+    &lt;div class="col-6 col-sm-3"&gt;.col-6 .col-sm-3&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+</code></pre>
+<p>Ви також можете застосувати цей розрив у певних контрольних точках за допомогою наших утиліт для адаптивного відображення.</p>
+<pre><code class="language-html">
+    &lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-6 col-sm-4"&gt;.col-6 .col-sm-4&lt;/div&gt;
+    &lt;div class="col-6 col-sm-4"&gt;.col-6 .col-sm-4&lt;/div&gt;
+
+    &lt;!-- Змусить наступні колонки переходити на новий рядок у контрольній точці md та вище --&gt;
+    &lt;div class="w-100 d-none d-md-block"&gt;&lt;/div&gt;
+
+    &lt;div class="col-6 col-sm-4"&gt;.col-6 .col-sm-4&lt;/div&gt;
+    &lt;div class="col-6 col-sm-4"&gt;.col-6 .col-sm-4&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<a href="#top" class="scroll-to-top">
+  <img src="arrow-up.png" alt="Догори">
+</a>
+<a href="Адаптивність.html#" class="next-page-link">Перейти до наступного розділу...</a>
+</div>
+<footer>
+  <div class="footer-content">
+      <div class="contact-item">
+        <img class='footer-logo' img src="logo-01.png" />
+      </div>
+      <div class="contact-item">
+        <h3>Навігація</h3>
+        <ul class="navigation-list">
+          <li><a href ="Головна.html#">Головна</a></li>
+          <li><a href ="Основи.html#">Основи</a></li>
+          <li><a href ="Компоненти.html#">Компоненти</a></li>
+          <li><a href ="Сітка.html">Сітка</a></li>
+          <li><a href ="Адаптивність.html#">Адаптивність</a></li>
+          <li><a href ="Про нас.html#">Про нас</a></li>
+        </ul>
+      </div>
+      <div class="contact-item">
+        <h3>Соц. мережі</h3>
+        <a href="https://facebook.com" class="social-icon">Facebook</a>
+        <a href="https://twitter.com" class="social-icon">Twitter</a>
+        <a href="https://instagram.com" class="social-icon">Instagram</a>
+      </div>
+  </div>
+</footer>
+
+</body>
+</html>

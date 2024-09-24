@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адаптивність</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class = "header2" id="top">
+        <div class="header-content">
+            <img class='logo' img src="logo-01.png" />
+            <div class="nav">
+                <ul>
+                    <li><a href ="Головна.html#">Головна</a></li>
+                    <li><a href ="Основи.html#">Основи</a></li>
+                    <li><a href ="Компоненти.html#">Компоненти</a></li>
+                    <li><a href ="Сітка.html#">Сітка</a></li>
+                    <li><a href ="Адаптивність.html#">Адаптивність</a></li>
+                    <li><a href ="Про нас.html#">Про нас</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <h1>АДАПТИВНІСТЬ</h1>
+    <div class="rule">
+        <h2>Контрольні точки</h2> 
+<p>Контрольні точки - це ширина, що настроюється, яка визначає поведінку адаптивного макета на різних пристроях або розмірах області перегляду в Bootstrap.</p>
+<h3>Основні концепції</h3>
+<ul>
+    <li>Контрольні точки – це будівельні блоки адаптивного дизайну. Використовуйте їх, щоб контролювати, коли макет може бути адаптований для певного вікна перегляду або розміру пристрою.</li>
+    <li>Використовуйте медіа-запити для створення Вашого CSS за контрольною точкою. Медіа-запити - це функція CSS, яка дозволяє умовно застосовувати стилі на основі набору параметрів браузера та операційної системи. Найчастіше використовують <span class="code-style">min-width</span class="code-style"> у  медіа-запитах.</li>
+    <li>Насамперед мобільні, мета – адаптивний дизайн. CSS Bootstrap має на меті застосування мінімальної кількості стилів, щоб макет працював з мінімальною контрольною точкою, а потім на шари стилів, щоб налаштувати цей дизайн для більших пристроїв. Це оптимізує Ваш CSS, скорочує час рендерингу та забезпечує відмінний досвід для Ваших відвідувачів.</li>
+</ul>
+<h3>Доступні контрольні точки</h3>
+<p>Bootstrap включає шість контрольних точок за умовчанням, іноді званих <span class="code-style">grid tiers</span class="code-style">, для швидкої побудови.</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Контрольна точка</th>
+                <th>Інфікс класу</th>
+                <th>Габаритні розміри</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Дуже маленький</td>
+                <td>None</td>
+                <td>< 576px</td>
+            </tr>
+            <tr>
+                <td>Маленький</td>
+                <td>sm</td>
+                <td>≥ 576px</td>
+            </tr>
+            <tr>
+                <td>Середній</td>
+                <td>md</td>
+                <td>≥ 768px</td>
+            </tr>
+            <tr>
+                <td>Великий</td>
+                <td>lg</td>
+                <td>≥ 992px</td>
+            </tr>
+            <tr>
+                <td>Дуже великий</td>
+                <td>xl</td>
+                <td>≥ 1200px</td>
+            </tr>
+            <tr>
+                <td>Огромний</td>
+                <td>xxl</td>
+                <td>≥ 1400px</td>
+            </tr>
+        </tbody>
+    </table>
+</div class="table-container">
+<p>Кожна контрольна точка була обрана для зручного розміщення контейнерів, ширина яких кратна 12. Контрольні точки також є підмножиною загальних розмірів пристроїв і розмірів області перегляду - вони спеціально не націлені на кожен варіант використання або пристрій. Навпаки, ці лінійки забезпечують міцну та стабільну основу практично для будь-якого пристрою.<br>
+
+    Ці контрольні точки налаштовуються через Sass – Ви знайдете їх на карті Sass у таблиці стилів <span class="code-style">_variables.scss</span class="code-style">.</p>
+<pre><code class="language-html">
+    $grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px
+      );
+</code></pre>
+<h3>Медіа-запити</h3>
+<p>Оскільки Bootstrap в першу чергу розроблено для мобільних пристроїв, ми використовуємо кілька медіа-запитів для створення розумних контрольних точок для наших макетів та інтерфейсів. Ці контрольні точки в основному ґрунтуються на мінімальній ширині області перегляду і дозволяють масштабувати елементи в міру зміни області перегляду.</p>
+<h3>Мінімальна ширина</h3>
+<p>Bootstrap в основному використовує наступні діапазони медіа-запитів – або контрольні точки – у наших вихідних файлах Sass для розмітки, системи сіток та компонентів.</p>
+<pre><code class="language-html">
+    // Исходные миксины
+
+    // Нет необходимости в медиа-запросе для контрольной точки xs, так как это эффективно `@media (min-width: 0) { ... }`
+    @include media-breakpoint-up(sm) { ... }
+    @include media-breakpoint-up(md) { ... }
+    @include media-breakpoint-up(lg) { ... }
+    @include media-breakpoint-up(xl) { ... }
+    @include media-breakpoint-up(xxl) { ... }
+    
+    // Применение
+    
+    // Пример: Скрыть начало с `min-width: 0`, а затем показать в контрольной точке `sm`
+    .custom-class {
+      display: none;
+    }
+    @include media-breakpoint-up(sm) {
+      .custom-class {
+        display: block;
+      }
+    }
+</code></pre>
+<p>Ці міксини Sass перетворюються на наш скомпільований CSS з використанням значень, оголошених у наших змінних Sass. Наприклад:</p>
+<pre><code class="language-html">
+    // Устройства X-Small (портретные телефоны, менее 576 пикселей)
+    // Нет медиа-запроса для `xs`, так как это значение по умолчанию в Bootstrap
+    
+    // Устройства Small (телефоны с горизонтальной ориентацией, 576 пикселей и выше)
+    @media (min-width: 576px) { ... }
+    
+    // Устройства Medium (планшеты, 768 пикселей и выше)
+    @media (min-width: 768px) { ... }
+    
+    // Устройства Large (настольные компьютеры, 992 пикселей и выше)
+    @media (min-width: 992px) { ... }
+    
+    // Устройства X-Large (большие настольные компьютеры, 1200 пикселей и выше)
+    @media (min-width: 1200px) { ... }
+    
+    // Устройства XX-Large (большие настольные компьютеры, 1400 пикселей и выше)
+    @media (min-width: 1400px) { ... }
+</code></pre>
+
+<h3>Максимальна ширина</h3>
+<p>Іноді використовують медіа-запити в іншому напрямку (заданий розмір екрана або менше):</p>
+<pre><code class="language-html">
+    // `xs` возвращает только набор правил, но не медиа-запрос
+    // ... { ... }
+    
+    // `sm` применяется к устройствам x-small (портретные телефоны, менее 576 пикселей)
+    @media (max-width: 575.98px) { ... }
+    
+    // `md` применяется к небольшим устройствам medium (телефоны с горизонтальной ориентацией, менее 768 пикселей)
+    @media (max-width: 767.98px) { ... }
+    
+    // `lg` применяется к устройствам среднего размера large (планшеты, менее 992 пикселей)
+    @media (max-width: 991.98px) { ... }
+    
+    // `xl` применяется к большим устройствам (настольные компьютеры, менее 1200 пикселей)
+    @media (max-width: 1199.98px) { ... }
+    
+    // `xxl` применяется к устройствам x-large (большие рабочие столы, менее 1400 пикселей)
+    @media (max-width: 1399.98px) { ... }
+</code></pre>
+<h3>Поодинока контрольна точка</h3>
+<p>Існують також медіа-запити та міксини для націлювання на один сегмент розмірів екрану з використанням мінімальної та максимальної ширини контрольної точки.</p>
+
+<pre><code class="language-html">
+    @include media-breakpoint-only(xs) { ... }
+@include media-breakpoint-only(sm) { ... }
+@include media-breakpoint-only(md) { ... }
+@include media-breakpoint-only(lg) { ... }
+@include media-breakpoint-only(xl) { ... }
+@include media-breakpoint-only(xxl) { ... }
+</code></pre>
+<p>Наприклад, <span class="code-style">@include media-breakpoint-only(md) { ... }</span class="code-style"> призведе до:</p>
+<pre><code class="language-html">
+    @media (min-width: 768px) and (max-width: 991.98px) { ... }
+</code></pre>
+<h3>Між контрольними точками</h3>
+<p>Так само медіа-запити можуть охоплювати кілька значень ширини контрольної точки:</p>
+<pre><code class="language-html">
+    @include media-breakpoint-between(md, xl) { ... }
+</code></pre>
+<p>Що приводить до:</p>
+<pre><code class="language-html">
+    // Пример
+// Применятся стили, начиная со средних и заканчивая очень большими.
+@media (min-width: 768px) and (max-width: 1199.98px) { ... }
+</code></pre>
+<a href="Про нас.html#" class="next-page-link">Перейти до наступного розділу...</a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+<a href="#top" class="scroll-to-top">
+    <img src="arrow-up.png" alt="Догори">
+</a>
+<footer>
+    <div class="footer-content">
+        <div class="contact-item">
+          <img class='footer-logo' img src="logo-01.png" />
+        </div>
+        <div class="contact-item">
+          <h3>Навігація</h3>
+          <ul class="navigation-list">
+            <li><a href ="Головна.html#">Головна</a></li>
+            <li><a href ="Основи.html#">Основи</a></li>
+            <li><a href ="Компоненти.html#">Компоненти</a></li>
+            <li><a href ="Сітка.html">Сітка</a></li>
+            <li><a href ="Адаптивність.html#">Адаптивність</a></li>
+            <li><a href ="Про нас.html#">Про нас</a></li>
+          </ul>
+        </div>
+        <div class="contact-item">
+          <h3>Соц. мережі</h3>
+          <a href="https://facebook.com" class="social-icon">Facebook</a>
+          <a href="https://twitter.com" class="social-icon">Twitter</a>
+          <a href="https://instagram.com" class="social-icon">Instagram</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
